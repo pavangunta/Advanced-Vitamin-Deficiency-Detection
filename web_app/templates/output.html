@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>DETECTION OF VITAMIN DEFFICIENCY</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<a href="/">Try another image</a>
+<div class="bgded overlay" style="background-image:url('{% static 'images/10.jpeg' %}')"> 
+  <div class="wrapper row0">
+      <div class="fl_left"> 
+      </div>
+      <div class="fl_right"> 
+        <ul class="nospace">
+        
+            <div>
+              <form action="#" method="post">
+                <fieldset>
+                  <legend>Quick Search:</legend>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div id="pageintro" class="hoc clear" style="margin-top:-7%"> 
+    <article>
+      <h4 style="color:#FCBAFC;margin-top:-10%;font-size:30px"> THE GIVEN IMAGE IS SIGN OF.. </h4>
+      {% comment %} <footer style="margin-bottom:-15%"> {% endcomment %}
+     <form action='output' method="POST" enctype="multipart/form-data" class="login100-form validate-form" style="margin-left:-20%;margin-right:-20%">
+     {% csrf_token %}
+        <h3 class="heading" style="font-size:34px;color:#F1BAFC;">
+  {{ out }}
+</h3>
+
+<p style="color:#ffffff;font-size:20px;line-height:1.8;margin-top:5px;">
+  <b>Description:</b><br>
+  {{ description }}
+</p>
+
+<p style="color:#ffffff;font-size:20px;line-height:1.8;margin-top:5px;">
+  <b>How to Cure:</b><br>
+  {{ cure }}
+</p>
+
+<p style="color:#00ffcc;font-size:22px;margin-top:10px;">
+  <b>Prediction Confidence:</b> {{ confidence }}%
+</p>
+
+<p style="font-size:15px;color:#F50A0E;margin-top:5px;font-size:28px">
+⚠️ This result is generated using an AI model and is not a medical diagnosis.
+</p>
+
+
+        </form>
+      </footer>
+    </article>
+  </div>
+</div>
+<!-- End Top Background Image Wrapper -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

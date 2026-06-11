@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>   
+<!--
+Template Name: Shiphile
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<head>
+<title>DETECTION OF VITAMIN DEFFICIENCY</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<center>
+<body id="top">
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('{% static 'images/07.jpeg' %}')"> 
+  <div id="pageintro" class="hoc clear"> 
+    <article>
+      <h3 class="heading" style="margin-top: -10%;"> Hey there! We are here to Detect vitamin deficiency using image analysis</h3>
+      <p>  Upload Image  </p>
+    </article>
+    
+    <form action="/output/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <input type="file" name="image" required>
+    <button type="submit" style="color:#000000;width:100px;height:40px;border-radius:10px;margin-top:10px">Predict</button>
+</form>
+    {% comment %} <form action='output' method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+      {% csrf_token %}
+         <ul class="nospace inline pushright">
+           <li>
+            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <input class="input100" type="file" name="file">
+        <span class="focus-input100"></span>
+        <span class="label-input100">Image</span>
+      </div>
+           <select class="input100" type = 'text' name="algo" style="color:black">
+           <option value='model'> model </option>
+           <option value='model'> mobile net </option>
+           </select>
+           <span class="label-input100">Algotithm</span>
+           <footer><button type="submit" class="btn" href="#" style="background-color:#6636F7">Predict</button></footer>
+         </ul>
+         </form> {% endcomment %}
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</center>
+</html>
